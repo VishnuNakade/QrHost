@@ -1,8 +1,9 @@
+require('dotenv').config()
 const express = require('express');
 const os = require('os');
 const cors = require('cors');
 const app = express();
-const PORT = 4000;
+const port=process.env.PORT || 4000;
 
 app.use(cors());
 
@@ -23,6 +24,6 @@ app.get('/api/get-ip', (req, res) => {
   res.json({ ip });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
 });
